@@ -1,36 +1,18 @@
-apply plugin: 'com.android.library'
-
-android {
-    compileSdkVersion 23
-    buildToolsVersion '25.0.0'
-
-    defaultConfig {
-        minSdkVersion 7
-        targetSdkVersion 23
-        versionCode 1
-        versionName '1.0'
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply from: 'buildsystem/dependencies.gradle'
+buildscript {
+    apply from: 'buildsystem/dependencies.gradle'
+    repositories {
+        jcenter()
     }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-        }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.2.3'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
     }
 }
 
-dependencies {
-    compile libraries.supportRecyclerView
-    compile libraries.nineOldAndroids
-    //compile "com.android.support:recyclerview-v7:23.1.1"
-    //compile "com.nineoldandroids:library:2.4.0"
-}
-
-if (JavaVersion.current().isJava8Compatible()) {
-    tasks.withType(Javadoc) {
-        // disable the crazy super-strict doclint tool in Java 8
-        //noinspection SpellCheckingInspection
-        options.addStringOption('Xdoclint:none', '-quiet')
+allprojects {
+    repositories {
+        jcenter()
     }
 }
-
-//apply from: 'https://raw.github.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'
