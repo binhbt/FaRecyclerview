@@ -7,7 +7,7 @@
         android:layout_height="wrap_content"
         app:layout_empty="@layout/vega_emptyview"
         app:layout_moreProgress="@layout/vega_viewmore_progress"
-        app:mainLayoutId="@layout/vega_layout_vertical_main"
+        app:mainLayoutId="@layout/vega_layout_vertical_main_wrap_content"
         app:recyclerClipToPadding="false"
         app:scrollbarStyle="insideInset" />
 

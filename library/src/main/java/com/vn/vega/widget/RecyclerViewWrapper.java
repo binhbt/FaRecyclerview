@@ -11,7 +11,7 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewStub;
+import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 
 import com.malinskiy.superrecyclerview.OnMoreListener;
@@ -50,6 +50,9 @@ public class RecyclerViewWrapper extends RelativeLayout{
 
     protected boolean isVerticalScrollBarEnabled;
     protected boolean isHorizontalScrollBarEnabled;
+
+    protected boolean isVerticalWrapContent;
+    protected boolean isHorizontalWrapContent;
     public RecyclerViewWrapper(Context context) {
         super(context);
     }
@@ -88,6 +91,9 @@ public class RecyclerViewWrapper extends RelativeLayout{
 
             isVerticalScrollBarEnabled = a.getBoolean(R.styleable.RecyclerViewWrapper_vega_vertical_scrollbarEnabled, true);
             isHorizontalScrollBarEnabled = a.getBoolean(R.styleable.RecyclerViewWrapper_vega_horizontal_scrollbarEnabled, true);
+
+            isVerticalWrapContent = a.getBoolean(R.styleable.RecyclerViewWrapper_vega_vertical_wrap_content, false);
+            isHorizontalWrapContent = a.getBoolean(R.styleable.RecyclerViewWrapper_vega_horizontal_wrap_content, false);
         } finally {
             a.recycle();
         }
@@ -99,10 +105,18 @@ public class RecyclerViewWrapper extends RelativeLayout{
         }
         //vertical
         if (mOrientation == ORIENTATION_VERTICAL){
-            LayoutInflater.from(getContext()).inflate(R.layout.vega_layout_vertical, this);
+            if (isVerticalWrapContent){
+                LayoutInflater.from(getContext()).inflate(R.layout.vega_layout_vertical_wrap_content, this);
+            }else {
+                LayoutInflater.from(getContext()).inflate(R.layout.vega_layout_vertical, this);
+            }
         }else{
             //horizontal
-            LayoutInflater.from(getContext()).inflate(R.layout.vega_layout_horizontal, this);
+            if (isHorizontalWrapContent){
+                LayoutInflater.from(getContext()).inflate(R.layout.vega_layout_horizontal_main_wrap_content, this);
+            }else {
+                LayoutInflater.from(getContext()).inflate(R.layout.vega_layout_horizontal, this);
+            }
         }
         mRecycler = (SuperRecyclerView) findViewById(R.id.super_list);
         mRecycler.supportLoadMore(isLoadmore);
@@ -136,6 +150,21 @@ public class RecyclerViewWrapper extends RelativeLayout{
             if (mSpanCount != -1){
                 setLayoutManager(new StaggeredGridLayoutManager(mSpanCount,
                         mOrientation==ORIENTATION_HORIZONTAL?StaggeredGridLayoutManager.HORIZONTAL:StaggeredGridLayoutManager.VERTICAL));
+            }
+        }
+        if (isHorizontalWrapContent || isVerticalWrapContent){
+            RelativeLayout.LayoutParams rlp = new RelativeLayout.LayoutParams(
+                    isHorizontalWrapContent? LayoutParams.WRAP_CONTENT:RelativeLayout.LayoutParams.MATCH_PARENT,
+                    isVerticalWrapContent? LayoutParams.WRAP_CONTENT:RelativeLayout.LayoutParams.MATCH_PARENT);
+            setLayoutParams(rlp);
+            getSuperRecyclerView().setLayoutParams(rlp);
+            getRecyclerView().setLayoutParams(rlp);
+            View rootContentView =findViewById(R.id.root_content);
+            if (rootContentView != null){
+                FrameLayout.LayoutParams rlp1 = new FrameLayout.LayoutParams(
+                        isHorizontalWrapContent? LayoutParams.WRAP_CONTENT:RelativeLayout.LayoutParams.MATCH_PARENT,
+                        isVerticalWrapContent? LayoutParams.WRAP_CONTENT:RelativeLayout.LayoutParams.MATCH_PARENT);
+                rootContentView.setLayoutParams(rlp1);
             }
         }
 

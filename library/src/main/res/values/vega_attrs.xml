@@ -32,6 +32,9 @@
         </attr>
         <attr name="vega_vertical_scrollbarEnabled" format="boolean" />
         <attr name="vega_horizontal_scrollbarEnabled" format="boolean" />
+        <attr name="vega_horizontal_wrap_content" format="boolean" />
+        <attr name="vega_vertical_wrap_content" format="boolean" />
+
     </declare-styleable>
 
 </resources>
