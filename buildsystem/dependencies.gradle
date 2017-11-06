@@ -12,14 +12,17 @@ ext.versions = [
         nineOldAndroids: '2.4.0',
         materialicons  : '1.0.1',
         stickyheaders  : '0.5.0',
-		retrofit2  : '2.0.0-beta3',
+		retrofit2  : '2.3.0',
 		okhttp3	   : '3.4.2',
 		rxjava     : '1.0.10',
 		rxandroid     : '1.1.0',
 		multidex     : '1.0.1',
 		butterknife  : '7.0.1',
 		eventbus  	 : '3.0.0',
-		picasso      : '2.5.2'
+		picasso      : '2.5.2',
+		firebase	 : '11.4.2',
+		fresco		 : '1.5.0',
+
 ]
 
 ext.libraries = [
@@ -42,5 +45,9 @@ ext.libraries = [
 		multidex     	   : "com.android.support:multidex:$versions.multidex",
 		butterknife        : "com.jakewharton:butterknife:$versions.butterknife",
 		eventbus     	   : "org.greenrobot:eventbus:$versions.eventbus",
-		picasso			   : "com.squareup.picasso:picasso:$versions.picasso"
+		picasso			   : "com.squareup.picasso:picasso:$versions.picasso",
+		firebase_analytics: 'com.google.firebase:firebase-analytics:$versions.firebase',
+		firebase_invites: 'com.google.firebase:firebase-invites:$versions.firebase',
+		firebase_messaging: 'com.google.firebase:firebase-messaging:$versions.firebase',
+		fresco: 'com.facebook.fresco:fresco:$versions.fresco',
 ]
