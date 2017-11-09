@@ -1,4 +1,4 @@
-package com.vn.vega.adapter.multipleviewtype;
+package com.vn.fa.adapter.multipleviewtype;
 
 /**
  * Created by binhbt on 7/22/2016.

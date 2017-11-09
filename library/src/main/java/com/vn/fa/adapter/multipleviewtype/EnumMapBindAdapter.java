@@ -1,4 +1,4 @@
-package com.vn.vega.adapter.multipleviewtype;
+package com.vn.fa.adapter.multipleviewtype;
 
 import java.util.HashMap;
 import java.util.Map;

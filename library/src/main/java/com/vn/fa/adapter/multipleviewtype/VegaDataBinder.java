@@ -1,4 +1,4 @@
-package com.vn.vega.adapter.multipleviewtype;
+package com.vn.fa.adapter.multipleviewtype;
 
 import android.view.LayoutInflater;
 import android.view.View;

@@ -1,4 +1,4 @@
-package com.vn.vega.widget;
+package com.vn.fa.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;
