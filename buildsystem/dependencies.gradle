@@ -2,10 +2,10 @@ ext.versions = [
         code           : 7,
         name           : '1.1.4',
 
-        minSdk         : 7,
-        targetSdk      : 23,
-        compileSdk     : 23,
-        buildTools     : '23.0.3',
+        minSdk         : 15,
+        targetSdk      : 24,
+        compileSdk     : 24,
+        buildTools     : '25.0.0',
 
         // Library versions
         supportLibs    : '23.3.0',
@@ -21,7 +21,7 @@ ext.versions = [
 		eventbus  	 : '3.0.0',
 		picasso      : '2.5.2',
 		firebase	 : '11.4.2',
-		fresco		 : '1.5.0'
+		fresco		 : '1.5.0',
 
 ]
 
@@ -49,5 +49,5 @@ ext.libraries = [
 		firebase_analytics: 'com.google.firebase:firebase-analytics:$versions.firebase',
 		firebase_invites: 'com.google.firebase:firebase-invites:$versions.firebase',
 		firebase_messaging: 'com.google.firebase:firebase-messaging:$versions.firebase',
-		fresco: 'com.facebook.fresco:fresco:$versions.fresco'
+		fresco: 'com.facebook.fresco:fresco:$versions.fresco',
 ]

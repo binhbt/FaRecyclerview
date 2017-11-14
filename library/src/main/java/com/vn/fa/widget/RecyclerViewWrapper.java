@@ -17,7 +17,7 @@ import android.widget.RelativeLayout;
 import com.malinskiy.superrecyclerview.OnMoreListener;
 import com.malinskiy.superrecyclerview.SuperRecyclerView;
 import com.malinskiy.superrecyclerview.swipe.SwipeDismissRecyclerViewTouchListener;
-import com.vn.vega.superrecyclerview.R;
+import com.vn.fa.superrecyclerview.R;
 
 /**
  * Created by binhbt on 6/27/2016.

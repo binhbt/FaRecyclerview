@@ -16,7 +16,7 @@ import android.widget.FrameLayout;
 
 import com.malinskiy.superrecyclerview.swipe.SwipeDismissRecyclerViewTouchListener;
 import com.malinskiy.superrecyclerview.util.FloatUtil;
-import com.vn.vega.superrecyclerview.R;
+import com.vn.fa.superrecyclerview.R;
 
 public class SuperRecyclerView extends FrameLayout {
 

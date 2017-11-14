@@ -4,7 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 
-import com.vn.vega.superrecyclerview.R;
+import com.vn.fa.superrecyclerview.R;
 
 import java.util.List;
 
