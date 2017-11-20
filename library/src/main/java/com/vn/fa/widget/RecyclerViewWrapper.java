@@ -377,4 +377,10 @@ public class RecyclerViewWrapper extends RelativeLayout{
         this.isLoadmore = false;
         mRecycler.endData();
     }
+    public void setHorizontalScrollBarEnabled(boolean isEnabled){
+        getRecyclerView().setHorizontalScrollBarEnabled(isEnabled);
+    }
+    public void setVerticalScrollBarEnabled(boolean isEnabled){
+        getRecyclerView().setVerticalScrollBarEnabled(isEnabled);
+    }
 }

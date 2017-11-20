@@ -14,15 +14,15 @@ ext.versions = [
         stickyheaders  : '0.5.0',
 		retrofit2  : '2.3.0',
 		okhttp3	   : '3.4.2',
-		rxjava     : '1.0.10',
-		rxandroid     : '1.1.0',
+		rxjava     : '2.1.6',
+		rxandroid     : '2.0.1',
 		multidex     : '1.0.1',
 		butterknife  : '7.0.1',
 		eventbus  	 : '3.0.0',
 		picasso      : '2.5.2',
 		firebase	 : '11.4.2',
 		fresco		 : '1.5.0',
-
+        retrofit2rx2 : '1.0.0'
 ]
 
 ext.libraries = [
@@ -37,11 +37,11 @@ ext.libraries = [
         stickyheaders      : "com.eowise:recyclerview-stickyheaders:${versions.stickyheaders}@aar",
 		retrofit2core      : "com.squareup.retrofit2:retrofit:$versions.retrofit2",
 		retrofit2convertergson      	   : "com.squareup.retrofit2:converter-gson:$versions.retrofit2",
-		retrofit2adapterrxjava      	   : "com.squareup.retrofit2:adapter-rxjava:$versions.retrofit2",
+		retrofit2adapterrxjava      	   : "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$versions.retrofit2rx2",
 		retrofit2logging      	   : "com.squareup.okhttp3:logging-interceptor:$versions.okhttp3",
 		okhttp3            : "com.squareup.okhttp3:okhttp:$versions.okhttp3",
-		rxjava      	   : "io.reactivex:rxjava:$versions.rxjava",
-		rxandroid     	   : "io.reactivex:rxandroid:$versions.rxandroid",
+		rxjava      	   : "io.reactivex.rxjava2:rxjava:$versions.rxjava",
+		rxandroid     	   : "io.reactivex.rxjava2:rxandroid:$versions.rxandroid",
 		multidex     	   : "com.android.support:multidex:$versions.multidex",
 		butterknife        : "com.jakewharton:butterknife:$versions.butterknife",
 		eventbus     	   : "org.greenrobot:eventbus:$versions.eventbus",
