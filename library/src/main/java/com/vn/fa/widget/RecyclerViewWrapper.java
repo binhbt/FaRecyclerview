@@ -383,4 +383,10 @@ public class RecyclerViewWrapper extends RelativeLayout{
     public void setVerticalScrollBarEnabled(boolean isEnabled){
         getRecyclerView().setVerticalScrollBarEnabled(isEnabled);
     }
+    public void setProgressInCenter(boolean isShow){
+        isProgressInCenter = isShow;
+    }
+    public boolean isProgressInCenter(){
+        return isProgressInCenter;
+    }
 }
