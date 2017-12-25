@@ -1,5 +1,7 @@
 package com.vn.fa.adapter.multipleviewtype;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -27,24 +29,36 @@ public class ListBindAdapter extends DataBindAdapter {
     }
     @Override
     public int getItemViewType(int position) {
-        int itemCount = 0;
+/*        int itemCount = 0;
         for (int viewType = 0, size = mBinderList.size(); viewType < size; viewType++) {
             itemCount += mBinderList.get(viewType).getItemCount();
             if (position < itemCount) {
                 return viewType;
             }
         }
-        throw new IllegalArgumentException("arg position is invalid");
+        throw new IllegalArgumentException("arg position is invalid");*/
+        return mBinderList.get(position).getItemViewType();
+    }
+    public <T extends DataBinder> T getDataBinderByPosition(int position){
+        return (T) mBinderList.get(position);
     }
 
     @Override
     public <T extends DataBinder> T getDataBinder(int viewType) {
-        return (T) mBinderList.get(viewType);
+        //Log.e("size", "data size "+ mBinderList.size());
+        for (DataBinder dataBinder:mBinderList
+             ) {
+            if (dataBinder.getItemViewType() == viewType){
+                return  (T)dataBinder;
+            }
+        }
+        return (T) mBinderList.get(0);
+        //return (T) mBinderList.get(viewType);
     }
 
     @Override
     public int getPosition(DataBinder binder, int binderPosition) {
-        int viewType = mBinderList.indexOf(binder);
+/*        int viewType = mBinderList.indexOf(binder);
         if (viewType < 0) {
             throw new IllegalStateException("binder does not exist in adapter");
         }
@@ -54,7 +68,8 @@ public class ListBindAdapter extends DataBindAdapter {
             position += mBinderList.get(i).getItemCount();
         }
 
-        return position;
+        return position;*/
+        return binderPosition;
     }
 
     @Override

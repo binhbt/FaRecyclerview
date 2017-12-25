@@ -181,6 +181,12 @@ public class RecyclerViewWrapper extends RelativeLayout{
                 mMoreProgressId, mProgressId);
 
     }
+    public void setProgressInCenter(boolean isShow){
+        isProgressInCenter = isShow;
+    }
+    public boolean isProgressInCenter(){
+        return isProgressInCenter;
+    }
     public void disableRefresh(){
         mRecycler.disableRefresh();
     }
@@ -383,10 +389,7 @@ public class RecyclerViewWrapper extends RelativeLayout{
     public void setVerticalScrollBarEnabled(boolean isEnabled){
         getRecyclerView().setVerticalScrollBarEnabled(isEnabled);
     }
-    public void setProgressInCenter(boolean isShow){
-        isProgressInCenter = isShow;
-    }
-    public boolean isProgressInCenter(){
-        return isProgressInCenter;
+    public void showEmptyView(boolean isShow){
+        mRecycler.getEmptyStub().setVisibility(isShow?View.VISIBLE:View.GONE);
     }
 }

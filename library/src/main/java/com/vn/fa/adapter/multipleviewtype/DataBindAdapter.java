@@ -1,6 +1,7 @@
 package com.vn.fa.adapter.multipleviewtype;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.ViewGroup;
 
 /**
@@ -12,14 +13,20 @@ abstract public class DataBindAdapter extends RecyclerView.Adapter<RecyclerView.
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        //Log.e("onCreateViewHolder", "viewType "+viewType);
         return getDataBinder(viewType).newViewHolder(parent);
     }
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int position) {
         int binderPosition = getBinderPosition(position);
-        getDataBinder(viewHolder.getItemViewType()).bindViewHolder(viewHolder, binderPosition);
+        //getDataBinder(viewHolder.getItemViewType()).bindViewHolder(viewHolder, binderPosition);
+        //getDataBinder(position).bindViewHolder(viewHolder, position);
+        //Log.e("onBindViewHolder", "viewType "+viewHolder.getItemViewType());
+        getDataBinderByPosition(position).bindViewHolder(viewHolder, binderPosition);
+
     }
+    public abstract <T extends DataBinder> T getDataBinderByPosition(int position);
 
     @Override
     public abstract int getItemCount();

@@ -228,7 +228,7 @@ public class SuperRecyclerView extends FrameLayout {
             && !isLoadingMore) {
 
             isLoadingMore = true;
-            if (mOnMoreListener != null) {
+            if (mOnMoreListener != null && totalItemCount >0) {
                 mMoreProgress.setVisibility(View.VISIBLE);
                 mOnMoreListener.onMoreAsked(mRecycler.getAdapter().getItemCount(), ITEM_LEFT_TO_LOAD_MORE, lastVisibleItemPosition);
             }

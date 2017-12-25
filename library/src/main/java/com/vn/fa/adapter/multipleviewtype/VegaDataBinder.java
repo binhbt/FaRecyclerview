@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 abstract public class VegaDataBinder<T> extends DataBinder<BinderViewHolder> implements IViewBinder{
     protected T data;
     protected DataBindAdapter mDataBindAdapter;
+    protected int itemViewType =0;
     public VegaDataBinder(T data){
         this.data = data;
     }
@@ -45,5 +46,12 @@ abstract public class VegaDataBinder<T> extends DataBinder<BinderViewHolder> imp
         return this;
     }
 
-
+    @Override
+    public int getItemViewType(){
+        return itemViewType;
+    }
+    public VegaDataBinder itemViewType(int itemViewType){
+        this.itemViewType = itemViewType;
+        return this;
+    }
 }

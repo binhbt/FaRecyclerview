@@ -16,12 +16,7 @@ public class VegaBindAdapter extends ListBindAdapter {
         this.mBinderList = dataSet;
         return this;
     }
-//    public void addBinderData(List<DataBinder> dataSet){
-//        if (dataSet != null){
-//            addAllBinder(dataSet);
-//            notifyDataSetChanged();
-//        }
-//    }
+
     public List<DataBinder> getBinderList(){
         return this.mBinderList;
     }
@@ -54,6 +49,21 @@ public class VegaBindAdapter extends ListBindAdapter {
     public void addAllDataObject(List<IViewBinder> dataset, boolean isAdapterAttached){
         if (dataset != null){
             addAll(convertDataToViewBinder(dataset, isAdapterAttached));
+        }
+    }
+    public void insertDataObject(IViewBinder object, int position){
+        VegaDataBinder iViewBinder = (VegaDataBinder) object.getViewBinder();
+        if (object != null){
+            insert(iViewBinder,position);
+        }
+    }
+    public void insertDataObject(IViewBinder object, int position, boolean isAdapterAttached){
+        VegaDataBinder iViewBinder = (VegaDataBinder) object.getViewBinder();
+        if (isAdapterAttached){
+            iViewBinder.adapter(this);
+        }
+        if (object != null){
+            insert(iViewBinder,position);
         }
     }
     public void add(DataBinder binder) {
