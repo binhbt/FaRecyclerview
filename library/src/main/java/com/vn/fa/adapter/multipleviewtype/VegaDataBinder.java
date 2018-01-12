@@ -13,6 +13,8 @@ abstract public class VegaDataBinder<T> extends DataBinder<BinderViewHolder> imp
     protected int itemViewType =0;
     public VegaDataBinder(T data){
         this.data = data;
+        String className = getClassName();
+        itemViewType = className.hashCode();
     }
     @Override
     public BinderViewHolder newViewHolder(ViewGroup parent) {
@@ -53,5 +55,25 @@ abstract public class VegaDataBinder<T> extends DataBinder<BinderViewHolder> imp
     public VegaDataBinder itemViewType(int itemViewType){
         this.itemViewType = itemViewType;
         return this;
+    }
+    public static long longHash(String string) {
+        long h = 98764321261L;
+        int l = string.length();
+        char[] chars = string.toCharArray();
+
+        for (int i = 0; i < l; i++) {
+            h = 31*h + chars[i];
+        }
+        return h;
+    }
+    private String getClassName(){
+        Class<?> enclosingClass = getClass().getEnclosingClass();
+        if (enclosingClass != null) {
+            //System.out.println(enclosingClass.getName());
+            return enclosingClass.getName();
+        } else {
+            //System.out.println(getClass().getName());
+            return getClass().getName();
+        }
     }
 }
