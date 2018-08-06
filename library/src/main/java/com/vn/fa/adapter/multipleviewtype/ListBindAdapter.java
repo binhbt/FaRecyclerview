@@ -29,14 +29,7 @@ public class ListBindAdapter extends DataBindAdapter {
     }
     @Override
     public int getItemViewType(int position) {
-/*        int itemCount = 0;
-        for (int viewType = 0, size = mBinderList.size(); viewType < size; viewType++) {
-            itemCount += mBinderList.get(viewType).getItemCount();
-            if (position < itemCount) {
-                return viewType;
-            }
-        }
-        throw new IllegalArgumentException("arg position is invalid");*/
+
         return mBinderList.get(position).getItemViewType();
     }
     public <T extends DataBinder> T getDataBinderByPosition(int position){
@@ -58,17 +51,7 @@ public class ListBindAdapter extends DataBindAdapter {
 
     @Override
     public int getPosition(DataBinder binder, int binderPosition) {
-/*        int viewType = mBinderList.indexOf(binder);
-        if (viewType < 0) {
-            throw new IllegalStateException("binder does not exist in adapter");
-        }
 
-        int position = binderPosition;
-        for (int i = 0; i < viewType; i++) {
-            position += mBinderList.get(i).getItemCount();
-        }
-
-        return position;*/
         return binderPosition;
     }
 
