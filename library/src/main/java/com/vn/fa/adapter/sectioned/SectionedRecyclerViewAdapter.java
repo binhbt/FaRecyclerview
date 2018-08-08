@@ -1,4 +1,4 @@
-package com.vn.fa.adapter.sectionedrecyclerviewadapter;
+package com.vn.fa.adapter.sectioned;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;

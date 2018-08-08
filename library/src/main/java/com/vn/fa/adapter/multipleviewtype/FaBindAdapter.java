@@ -5,11 +5,11 @@ import java.util.List;
 /**
  * Created by binhbt on 7/21/2016.
  */
-public class VegaBindAdapter extends ListBindAdapter {
+public class FaBindAdapter extends ListBindAdapter {
 
-    public VegaBindAdapter() {
+    public FaBindAdapter() {
     }
-    public VegaBindAdapter listData(List<DataBinder> dataSet){
+    public FaBindAdapter listData(List<DataBinder> dataSet){
         if (dataSet == null){
             dataSet = new ArrayList<>();
         }
@@ -27,7 +27,7 @@ public class VegaBindAdapter extends ListBindAdapter {
         this.mBinderList = dataSet;
     }
     public void addDataObject(IViewBinder object, boolean isAdapterAttached){
-        VegaDataBinder iViewBinder = (VegaDataBinder) object.getViewBinder();
+        FaDataBinder iViewBinder = (FaDataBinder) object.getViewBinder();
         if (isAdapterAttached){
             iViewBinder.adapter(this);
         }
@@ -36,7 +36,7 @@ public class VegaBindAdapter extends ListBindAdapter {
         }
     }
     public void addDataObject(IViewBinder object){
-        VegaDataBinder iViewBinder = (VegaDataBinder) object.getViewBinder();
+        FaDataBinder iViewBinder = (FaDataBinder) object.getViewBinder();
         if (object != null){
             add(iViewBinder);
         }
@@ -52,13 +52,13 @@ public class VegaBindAdapter extends ListBindAdapter {
         }
     }
     public void insertDataObject(IViewBinder object, int position){
-        VegaDataBinder iViewBinder = (VegaDataBinder) object.getViewBinder();
+        FaDataBinder iViewBinder = (FaDataBinder) object.getViewBinder();
         if (object != null){
             insert(iViewBinder,position);
         }
     }
     public void insertDataObject(IViewBinder object, int position, boolean isAdapterAttached){
-        VegaDataBinder iViewBinder = (VegaDataBinder) object.getViewBinder();
+        FaDataBinder iViewBinder = (FaDataBinder) object.getViewBinder();
         if (isAdapterAttached){
             iViewBinder.adapter(this);
         }
@@ -105,7 +105,7 @@ public class VegaBindAdapter extends ListBindAdapter {
         if (dataset.size() ==0) return new ArrayList<>();
         List<DataBinder> list = new ArrayList<>();
         for (IViewBinder viewBinder: dataset) {
-            VegaDataBinder iViewBinder = (VegaDataBinder) viewBinder.getViewBinder();
+            FaDataBinder iViewBinder = (FaDataBinder) viewBinder.getViewBinder();
             if (isAdapterAttached){
                 iViewBinder.adapter(this);
             }
@@ -120,7 +120,7 @@ public class VegaBindAdapter extends ListBindAdapter {
         return null;
     }
     public Object getItemData(int position){
-        return ((VegaDataBinder)getItemView(position)).getData();
+        return ((FaDataBinder)getItemView(position)).getData();
     }
     //Fix position bug
     @Override

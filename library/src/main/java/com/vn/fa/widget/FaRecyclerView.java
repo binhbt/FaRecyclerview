@@ -22,7 +22,7 @@ import com.vn.fa.superrecyclerview.R;
 /**
  * Created by binhbt on 6/27/2016.
  */
-public class RecyclerViewWrapper extends RelativeLayout{
+public class FaRecyclerView extends RelativeLayout{
     public static final int TYPE_LIST = 0x0;
     public static final int TYPE_GRID = 0x01000000;
     public static final int TYPE_STAGGED = 0x02000000;
@@ -53,47 +53,47 @@ public class RecyclerViewWrapper extends RelativeLayout{
 
     protected boolean isVerticalWrapContent;
     protected boolean isHorizontalWrapContent;
-    public RecyclerViewWrapper(Context context) {
+    public FaRecyclerView(Context context) {
         super(context);
     }
 
-    public RecyclerViewWrapper(Context context, AttributeSet attrs) {
+    public FaRecyclerView(Context context, AttributeSet attrs) {
         super(context, attrs);
         initAttrs(attrs);
         initView();
     }
 
-    public RecyclerViewWrapper(Context context, AttributeSet attrs, int defStyle) {
+    public FaRecyclerView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         initAttrs(attrs);
         initView();
     }
     protected void initAttrs(AttributeSet attrs) {
-        TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.RecyclerViewWrapper);
+        TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.FaRecyclerView);
         try {
-            mClipToPadding = a.getBoolean(R.styleable.RecyclerViewWrapper_vega_recyclerClipToPadding, false);
-            mPadding = (int) a.getDimension(R.styleable.RecyclerViewWrapper_vega_recyclerPadding, -1.0f);
-            mPaddingTop = (int) a.getDimension(R.styleable.RecyclerViewWrapper_vega_recyclerPaddingTop, 0.0f);
-            mPaddingBottom = (int) a.getDimension(R.styleable.RecyclerViewWrapper_vega_recyclerPaddingBottom, 0.0f);
-            mPaddingLeft = (int) a.getDimension(R.styleable.RecyclerViewWrapper_vega_recyclerPaddingLeft, 0.0f);
-            mPaddingRight = (int) a.getDimension(R.styleable.RecyclerViewWrapper_vega_recyclerPaddingRight, 0.0f);
-            mScrollbarStyle = a.getInt(R.styleable.RecyclerViewWrapper_vega_scrollbarStyle, -1);
-            mEmptyId = a.getResourceId(R.styleable.RecyclerViewWrapper_vega_layout_empty, 0);
-            mMoreProgressId = a.getResourceId(R.styleable.RecyclerViewWrapper_vega_layout_moreProgress, 0);
-            mProgressId = a.getResourceId(R.styleable.RecyclerViewWrapper_vega_layout_progress, 0);
-            //vega
-            isPullToRefresh = a.getBoolean(R.styleable.RecyclerViewWrapper_vega_pull_to_refresh, true);
-            isLoadmore = a.getBoolean(R.styleable.RecyclerViewWrapper_vega_load_more, true);
-            isProgressInCenter = a.getBoolean(R.styleable.RecyclerViewWrapper_vega_progress_in_center, true);
-            mOrientation = (int) a.getInt(R.styleable.RecyclerViewWrapper_vega_orientation, ORIENTATION_VERTICAL);
-            mType = (int) a.getInt(R.styleable.RecyclerViewWrapper_vega_type, TYPE_LIST);
-            mSpanCount = (int) a.getInt(R.styleable.RecyclerViewWrapper_vega_spanCount, -1);
+            mClipToPadding = a.getBoolean(R.styleable.FaRecyclerView_fa_recyclerClipToPadding, false);
+            mPadding = (int) a.getDimension(R.styleable.FaRecyclerView_fa_recyclerPadding, -1.0f);
+            mPaddingTop = (int) a.getDimension(R.styleable.FaRecyclerView_fa_recyclerPaddingTop, 0.0f);
+            mPaddingBottom = (int) a.getDimension(R.styleable.FaRecyclerView_fa_recyclerPaddingBottom, 0.0f);
+            mPaddingLeft = (int) a.getDimension(R.styleable.FaRecyclerView_fa_recyclerPaddingLeft, 0.0f);
+            mPaddingRight = (int) a.getDimension(R.styleable.FaRecyclerView_fa_recyclerPaddingRight, 0.0f);
+            mScrollbarStyle = a.getInt(R.styleable.FaRecyclerView_fa_scrollbarStyle, -1);
+            mEmptyId = a.getResourceId(R.styleable.FaRecyclerView_fa_layout_empty, 0);
+            mMoreProgressId = a.getResourceId(R.styleable.FaRecyclerView_fa_layout_moreProgress, 0);
+            mProgressId = a.getResourceId(R.styleable.FaRecyclerView_fa_layout_progress, 0);
+            //fa
+            isPullToRefresh = a.getBoolean(R.styleable.FaRecyclerView_fa_pull_to_refresh, true);
+            isLoadmore = a.getBoolean(R.styleable.FaRecyclerView_fa_load_more, true);
+            isProgressInCenter = a.getBoolean(R.styleable.FaRecyclerView_fa_progress_in_center, true);
+            mOrientation = (int) a.getInt(R.styleable.FaRecyclerView_fa_orientation, ORIENTATION_VERTICAL);
+            mType = (int) a.getInt(R.styleable.FaRecyclerView_fa_type, TYPE_LIST);
+            mSpanCount = (int) a.getInt(R.styleable.FaRecyclerView_fa_spanCount, -1);
 
-            isVerticalScrollBarEnabled = a.getBoolean(R.styleable.RecyclerViewWrapper_vega_vertical_scrollbarEnabled, true);
-            isHorizontalScrollBarEnabled = a.getBoolean(R.styleable.RecyclerViewWrapper_vega_horizontal_scrollbarEnabled, true);
+            isVerticalScrollBarEnabled = a.getBoolean(R.styleable.FaRecyclerView_fa_vertical_scrollbarEnabled, true);
+            isHorizontalScrollBarEnabled = a.getBoolean(R.styleable.FaRecyclerView_fa_horizontal_scrollbarEnabled, true);
 
-            isVerticalWrapContent = a.getBoolean(R.styleable.RecyclerViewWrapper_vega_vertical_wrap_content, false);
-            isHorizontalWrapContent = a.getBoolean(R.styleable.RecyclerViewWrapper_vega_horizontal_wrap_content, false);
+            isVerticalWrapContent = a.getBoolean(R.styleable.FaRecyclerView_fa_vertical_wrap_content, false);
+            isHorizontalWrapContent = a.getBoolean(R.styleable.FaRecyclerView_fa_horizontal_wrap_content, false);
         } finally {
             a.recycle();
         }
@@ -106,16 +106,16 @@ public class RecyclerViewWrapper extends RelativeLayout{
         //vertical
         if (mOrientation == ORIENTATION_VERTICAL){
             if (isVerticalWrapContent){
-                LayoutInflater.from(getContext()).inflate(R.layout.vega_layout_vertical_wrap_content, this);
+                LayoutInflater.from(getContext()).inflate(R.layout.fa_layout_vertical_wrap_content, this);
             }else {
-                LayoutInflater.from(getContext()).inflate(R.layout.vega_layout_vertical, this);
+                LayoutInflater.from(getContext()).inflate(R.layout.fa_layout_vertical, this);
             }
         }else{
             //horizontal
             if (isHorizontalWrapContent){
-                LayoutInflater.from(getContext()).inflate(R.layout.vega_layout_horizontal_main_wrap_content, this);
+                LayoutInflater.from(getContext()).inflate(R.layout.fa_layout_horizontal_main_wrap_content, this);
             }else {
-                LayoutInflater.from(getContext()).inflate(R.layout.vega_layout_horizontal, this);
+                LayoutInflater.from(getContext()).inflate(R.layout.fa_layout_horizontal, this);
             }
         }
         mRecycler = (SuperRecyclerView) findViewById(R.id.super_list);

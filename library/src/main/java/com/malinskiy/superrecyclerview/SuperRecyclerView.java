@@ -92,7 +92,7 @@ public class SuperRecyclerView extends FrameLayout {
             mPaddingLeft = (int) a.getDimension(R.styleable.superrecyclerview_recyclerPaddingLeft, 0.0f);
             mPaddingRight = (int) a.getDimension(R.styleable.superrecyclerview_recyclerPaddingRight, 0.0f);
             mScrollbarStyle = a.getInt(R.styleable.superrecyclerview_scrollbarStyle, -1);
-            mEmptyId = a.getResourceId(R.styleable.superrecyclerview_layout_empty, R.layout.vega_emptyview);
+            mEmptyId = a.getResourceId(R.styleable.superrecyclerview_layout_empty, R.layout.fa_emptyview);
             mMoreProgressId = a.getResourceId(R.styleable.superrecyclerview_layout_moreProgress, R.layout.layout_more_progress);
             mProgressId = a.getResourceId(R.styleable.superrecyclerview_layout_progress, R.layout.layout_progress);
         } finally {

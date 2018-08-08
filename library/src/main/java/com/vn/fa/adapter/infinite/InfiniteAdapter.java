@@ -1,5 +1,6 @@
 package com.vn.fa.adapter.infinite;
 
+import android.os.Handler;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,7 +8,7 @@ import android.view.ViewGroup;
 
 import com.vn.fa.adapter.multipleviewtype.DataBinder;
 import com.vn.fa.adapter.multipleviewtype.IViewBinder;
-import com.vn.fa.adapter.multipleviewtype.VegaBindAdapter;
+import com.vn.fa.adapter.multipleviewtype.FaBindAdapter;
 import com.vn.fa.superrecyclerview.R;
 
 import java.util.List;
@@ -22,7 +23,7 @@ import java.util.List;
  * Implementing Activities/fragments should also call moreDataLoaded(int, int)
  * to inform the adapter that more data has been loaded.
  */
-public class InfiniteAdapter extends VegaBindAdapter {
+public class InfiniteAdapter extends FaBindAdapter {
 
     public interface OnLoadMoreListener {
         void onLoadMore();
@@ -117,7 +118,12 @@ public class InfiniteAdapter extends VegaBindAdapter {
      */
     public void setShouldLoadMore(boolean shouldLoadMore) {
         this.mShouldLoadMore = shouldLoadMore;
-        notifyDataSetChanged();
+        new Handler().post(new Runnable() {
+            @Override
+            public void run() {
+                notifyDataSetChanged();
+            }
+        });
     }
 
     /**
@@ -180,7 +186,7 @@ public class InfiniteAdapter extends VegaBindAdapter {
      */
     public RecyclerView.ViewHolder getLoadingViewHolder(ViewGroup parent) {
         if (loadingLayout == 0) {
-            View loadingView = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_more_progress, parent, false);
+            View loadingView = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_load_more, parent, false);
             return new LoadingViewHolder(loadingView);
         }
         View loadingView = LayoutInflater.from(parent.getContext()).inflate(loadingLayout, parent, false);

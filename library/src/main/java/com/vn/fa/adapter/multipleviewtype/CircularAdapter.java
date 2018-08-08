@@ -6,7 +6,7 @@ import android.support.v7.widget.RecyclerView;
  * Created by leobui on 4/13/2017.
  */
 
-public class CircularAdapter extends VegaBindAdapter{
+public class CircularAdapter extends FaBindAdapter {
     @Override
     public int getItemCount() {
         return Integer.MAX_VALUE;

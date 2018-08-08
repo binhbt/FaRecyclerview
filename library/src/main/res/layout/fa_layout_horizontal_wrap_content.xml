@@ -1,13 +1,13 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <merge xmlns:android="http://schemas.android.com/apk/res/android">
 
     <com.malinskiy.superrecyclerview.SuperRecyclerView xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/super_list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_empty="@layout/vega_emptyview"
-        app:layout_moreProgress="@layout/vega_viewmore_progress"
-        app:mainLayoutId="@layout/vega_layout_vertical_main_wrap_content"
+        android:layout_height="match_parent"
+        app:layout_empty="@layout/fa_emptyview"
+        app:layout_moreProgress="@layout/fa_viewmore_progress"
+        app:mainLayoutId="@layout/fa_layout_horizontal_main_wrap_content"
         app:recyclerClipToPadding="false"
         app:scrollbarStyle="insideInset" />
 

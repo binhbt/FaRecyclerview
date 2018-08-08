@@ -5,9 +5,9 @@
         android:id="@+id/super_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_empty="@layout/vega_emptyview"
-        app:layout_moreProgress="@layout/vega_viewmore_progress"
-        app:mainLayoutId="@layout/vega_layout_vertical_main"
+        app:layout_empty="@layout/fa_emptyview"
+        app:layout_moreProgress="@layout/fa_viewmore_progress"
+        app:mainLayoutId="@layout/fa_layout_vertical_main"
         app:recyclerClipToPadding="false"
         app:scrollbarStyle="insideInset" />
 

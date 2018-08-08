@@ -7,11 +7,11 @@ import android.view.ViewGroup;
 /**
  * Created by binhbt on 7/21/2016.
  */
-abstract public class VegaDataBinder<T> extends DataBinder<BinderViewHolder> implements IViewBinder{
+abstract public class FaDataBinder<T> extends DataBinder<BinderViewHolder> implements IViewBinder{
     protected T data;
     protected DataBindAdapter mDataBindAdapter;
     protected int itemViewType =0;
-    public VegaDataBinder(T data){
+    public FaDataBinder(T data){
         this.data = data;
         String className = getClassName();
         itemViewType = className.hashCode();
@@ -30,14 +30,14 @@ abstract public class VegaDataBinder<T> extends DataBinder<BinderViewHolder> imp
     public T getData(){
         return data;
     }
-    public VegaDataBinder data(T data){
+    public FaDataBinder data(T data){
         this.data = data;
         return this;
     }
     public void setData(T data){
         this.data = data;
     }
-    public VegaDataBinder adapter(DataBindAdapter dataBindAdapter){
+    public FaDataBinder adapter(DataBindAdapter dataBindAdapter){
         this.mDataBindAdapter = dataBindAdapter;
         return this;
     }
@@ -52,7 +52,7 @@ abstract public class VegaDataBinder<T> extends DataBinder<BinderViewHolder> imp
     public int getItemViewType(){
         return itemViewType;
     }
-    public VegaDataBinder itemViewType(int itemViewType){
+    public FaDataBinder itemViewType(int itemViewType){
         this.itemViewType = itemViewType;
         return this;
     }
