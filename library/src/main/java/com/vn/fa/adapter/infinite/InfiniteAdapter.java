@@ -68,6 +68,9 @@ public class InfiniteAdapter extends FaBindAdapter {
                 }
             }
         }
+        if (getItemViewType(position) !=VIEW_TYPE_LOADING){
+            super.onBindViewHolder(holder, position);
+        }
     }
 
     @Override
