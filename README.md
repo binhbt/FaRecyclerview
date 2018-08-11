@@ -12,7 +12,8 @@ Demo
 -------
 This is the sample app in action:
 
-![Demo](https://github.com/iamtheib/InfiniteRecyclerView/raw/master/assets/demo.gif)
+[![https://img.youtube.com/vi/ihseEsSGgWQ/0.jpg](http://img.youtube.com/vi/ihseEsSGgWQ/0.jpg)](http://www.youtube.com/watch?v=ihseEsSGgWQ "Fucking Awesome Recyclerview")
+
 
 Usage
 -------
@@ -29,7 +30,7 @@ Add a dependency to your all project `build.gradle`:
 Add a dependency to your `build.gradle`:
 
     dependencies {
-       implementation 'com.github.binhbt:FaRecyclerView:1.2.7'
+       implementation 'com.github.binhbt:FaRecyclerView:1.2.8'
     }
 
 Define in xml:
@@ -51,7 +52,7 @@ FarecyclerView support fa_type: list, grid, stagged, fa_spanCount for grid type.
 
 You can set layout manager in code:
 
-`    mAdapter = new InfiniteAdapter();
+`    mAdapter = new FaAdapter();
 
      mRecycler = (FaRecyclerView) findViewById(R.id.list);
      GridLayoutManager glm = new GridLayoutManager(this, 2);
