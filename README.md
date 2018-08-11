@@ -36,7 +36,8 @@ Add a dependency to your `build.gradle`:
 Define in xml:
 
 
-`<com.vn.fa.widget.FaRecyclerView
+```
+<com.vn.fa.widget.FaRecyclerView
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/list"
         android:layout_width="match_parent"
@@ -45,9 +46,12 @@ Define in xml:
         app:fa_spanCount="2"
         android:layout_centerHorizontal="true"
         android:layout_height="match_parent"/>
-`
-
-
+```
+ - `app:fa_layout_empty="@layout/fa_emptyview"`: custom no data
+ - `app:fa_progress_in_center="true"`: show loading when load data
+ - `app:fa_type="list"`: list, grid, stagged type for Recyclerview
+ - `app:fa_orientation="vertical"`: vertical or horizontal oriontation 
+ 
 FarecyclerView support fa_type: list, grid, stagged, fa_spanCount for grid type. fa_orientation can be vertical, horizontal
 
 You can set layout manager in code:
