@@ -6,7 +6,7 @@ A RecyclerView Adapter which allows you to have an Infinite scrolling list in yo
 
 You can also customize what the loading view at the bottom of the list looks like.
 
-**Note:** This library should be able to work with any layout manager linear, grid, stagged layout manager. You can config layout manager in xml or in java code
+**Note:** This library should be able to work with any layout manager linear, grid, stagged layout manager. You can config layout manager in xml or in java code, support no data layout
 
 Demo
 -------
