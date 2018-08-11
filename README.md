@@ -77,7 +77,7 @@ Callback for refresh
                
             }
         });`
-    
+ - `mAdapter.setLoadingLayout(int loadingViewHolder);`: custom loading layout by yourself
  - `mAdapter.setShouldLoadMore(false);`: finish load more data, disable loading
  - `mAdapter.addAllDataObject(list)`: add item for recyclerview List<IViewBinder>
  - `public class PhotoItem implements IViewBinder`: Model need implement IviewBinder for multiple type view(Read on demo for detail)
