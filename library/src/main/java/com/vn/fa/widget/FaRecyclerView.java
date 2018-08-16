@@ -9,6 +9,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -391,5 +392,30 @@ public class FaRecyclerView extends RelativeLayout{
     }
     public void showEmptyView(boolean isShow){
         mRecycler.getEmptyStub().setVisibility(isShow?View.VISIBLE:View.GONE);
+    }
+    public void setLoadingSpanCount(final int spanCount){
+        if (spanCount >1){
+            GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(),
+                    spanCount, mOrientation==ORIENTATION_HORIZONTAL?GridLayoutManager.HORIZONTAL:GridLayoutManager.VERTICAL, false);
+            gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+                @Override
+                public int getSpanSize(int i) {
+                    try {
+                        RecyclerView.Adapter adapter = getAdapter();
+                        int size = adapter.getItemCount();
+                        if (i >= size) return 1;
+                        int type = adapter.getItemViewType(i);
+                        Log.e("ViewType", "" + type);
+                        if (type == -1) {
+                            return spanCount;
+                        }
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
+                    return 1;
+                }
+            });
+            setLayoutManager(gridLayoutManager);
+        }
     }
 }

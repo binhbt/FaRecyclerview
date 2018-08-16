@@ -7,4 +7,5 @@ import com.vn.fa.adapter.infinite.InfiniteAdapter;
  */
 
 public class FaAdapter extends InfiniteAdapter{
+
 }
