@@ -2,7 +2,7 @@
 Fucking Awesome RecyclerView
 =================
 
-A RecyclerView Adapter which allows you to have an Infinite scrolling list in your apps. This library offers you a custom adapter to use with any recycler view. You get a callback when the user is about to reach the bottom (or top, depending on your configuration), of the list, which you can use to load more data. FaRecyclerView support pull to refresh, multiple type view layout in a sec with model
+A RecyclerView Adapter which allows you to have an Infinite scrolling list in your apps. This library offers you a custom adapter to use with any recycler view. You get a callback when the user is about to reach the bottom of the list, which you can use to load more data. FaRecyclerView support pull to refresh, multiple type view layout in a sec with model
 
 You can also customize what the loading view at the bottom of the list looks like.
 
